@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-  
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-    <div class="msg-container hide">
-        <P id="msg">winner</P>
-   </div>
-<main>
-    <h1><b><u><i>tic tac toe game</i></u>
-    </b></h1>
-    <div class="container">
-    <div class="game">
-    <button class="box"></button>
-    <button class="box"></button>
-    <button class="box"></button>
-    <button class="box"></button>
-    <button class="box"></button>
-    <button class="box"></button>
-    <button class="box"></button>
-    <button  class="box"></button>
-    <button class="box"></button>
-
-</div>
-
-
+  <body>
+   
+    <main>
+      <h1>
+        <b
+          ><u><i>Tic Tac Toe game</i></u>
+        </b>
+      </h1>
+ <div class="msg-container hide">
+      <p id="msg">winner</p>
     </div>
-    <button id="reset">reset game</button>
+      <div class="container">
+    
+        <div class="game">
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+        </div>
+         
+<div class="scoreboard">
+        <h4>🏆 Score Board</h4>
+  <div class="player">
+    <h3 id="playerXName">Player X</h3>
+    <p id="scoreX">0</p>
+  </div>
+  <div class="player">
+    <h3 id="playerOName">Player O</h3>
+    <p id="scoreO">0</p>
+  </div>
+</div>
+      </div>
+     
 
-</main>
-<script src="logic.js"></script>
-</body>
+      <button id="reset">reset game</button>
+    </main>
+    <script src="logic.js"></script>
+  </body>
 </html>
