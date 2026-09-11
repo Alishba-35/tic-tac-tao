@@ -1,0 +1,168 @@
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* === Title and Message === */
+.game-title {
+  font-size: 3.5rem;
+  margin-top: 2rem;
+  color: #f8f8f8;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #6c63ff, 0 0 20px #6c63ff;
+}
+
+.msg-container {
+  margin-top: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+#msg {
+  font-size: 1.6rem;
+  color: #ffd700;
+  font-weight: 500;
+}
+
+.hide {
+  display: none;
+}
+
+/* === Main Layout: Game & Scoreboard === */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  margin-top: 2.5rem;
+}
+
+/* === Scoreboard === */
+.scoreboard {
+  background: rgba(42, 25, 60, 0.95);
+  padding: 20px;
+  margin-left: 5vh;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(108, 99, 255, 0.3);
+  width: 180px;
+  text-align: center;
+}
+
+.scoreboard h4 {
+  color: #ffd700;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.player {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 8px 5px;
+  margin: 10px 0;
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.player:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.03);
+}
+
+.player h3 {
+  font-size: 0.95rem;
+  color: #f5f5f5;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.player p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* === Game Grid === */
+.game {
+  width: 55vmin;
+  height: 55vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 270px;
+  align-items: center;
+  gap: 1vmin;
+}
+
+.box {
+  height: 17vmin;
+  width: 17vmin;
+  border-radius: 8px;
+  border: none;
+  background-color: #f5f5f5;
+  font-size: 7vmin;
+  color: red;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.box:hover {
+  background-color: #282c34;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* === Reset Button === */
+#reset {
+  display: block;
+  margin: 40px auto;
+  padding: 12px 35px;
+  background-color: #351965;
+  font-size: 1rem;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#reset:hover {
+  background-color: #5848e5;
+  transform: scale(1.05);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .scoreboard {
+    width: 200px;
+  }
+
+  .game {
+    width: 70vmin;
+    height: 70vmin;
+  }
+
+  .game-title {
+    font-size: 2.5rem;
+  }
+
+  #msg {
+    font-size: 1.2rem;
+  }
+}
