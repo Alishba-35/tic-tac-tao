@@ -1,0 +1,83 @@
+.theme-toggle {
+  position: relative;
+
+  width: 52px;
+  height: 30px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  background: var(--surface);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  font-size: 0;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.theme-toggle::before {
+  content: "☀";
+
+  position: absolute;
+  left: 4px;
+
+  width: 22px;
+  height: 22px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--accent-violet);
+
+  color: white;
+
+  font-size: 0.72rem;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.theme-toggle::after {
+  content: "☾";
+
+  position: absolute;
+  right: 5px;
+
+  color: var(--text-dim);
+
+  font-size: 0.75rem;
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(22px);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-violet);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--accent-violet);
+  outline-offset: 3px;
+}

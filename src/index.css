@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  --transition: 220ms ease;
+}
+
+/* =========================
+   DARK / NIGHT MODE
+========================= */
+
+:root,
+[data-theme="dark"] {
+  --bg: #090817;
+  --bg-secondary: #121026;
+
+  --surface: rgba(25, 21, 50, 0.72);
+  --surface-strong: rgba(30, 25, 60, 0.88);
+
+  --text: #f1efff;
+  --text-dim: #aaa5c5;
+  --text-faded: #77728f;
+
+  --accent-violet: #8175f5;
+  --accent-violet-hover: #968cf9;
+
+  --accent-gold: #f2c75c;
+
+  --x-color: #ff70a7;
+  --o-color: #53d8d0;
+
+  --border: rgba(255, 255, 255, 0.09);
+
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+
+  --background-overlay: linear-gradient(
+    rgba(9, 8, 23, 0.84),
+    rgba(9, 8, 23, 0.9)
+  );
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+[data-theme="light"] {
+  --bg: #eef1fa;
+  --bg-secondary: #f7f8fd;
+
+  --surface: rgba(255, 255, 255, 0.68);
+  --surface-strong: rgba(255, 255, 255, 0.88);
+
+  --text: #292442;
+  --text-dim: #77728f;
+  --text-faded: #aaa6b8;
+
+  --accent-violet: #6d63df;
+  --accent-violet-hover: #5d53d1;
+
+  --accent-gold: #c39420;
+
+  --x-color: #d95791;
+  --o-color: #269e98;
+
+  --border: rgba(43, 37, 77, 0.09);
+
+  --shadow: 0 30px 80px rgba(68, 70, 110, 0.14);
+
+  --background-overlay: linear-gradient(
+    rgba(238, 241, 250, 0.78),
+    rgba(238, 241, 250, 0.84)
+  );
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+
+  background-color: var(--bg);
+
+  background-image:
+    var(--background-overlay),
+    url("https://media.istockphoto.com/id/1292919739/vector/tic-tac-toe-school-game-colorful-seamless-pattern-for-fabric-and-print-on-the-paper.jpg?s=612x612&w=0&k=20&c=Q4gMspKHffPmhKuofb_Rb_WCD8uAgbsbXSKuWEcziM8=");
+
+  background-size: cover, 420px;
+  background-position: center, center;
+  background-repeat: no-repeat, repeat;
+  background-attachment: fixed;
+
+  color: var(--text);
+  font-family: var(--font-body);
+
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--accent-violet);
+  color: white;
+}
+
+#root {
+  min-height: 100dvh;
+}

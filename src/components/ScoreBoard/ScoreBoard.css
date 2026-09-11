@@ -1,0 +1,75 @@
+.scoreboard {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: min(88vw, 380px);
+  margin: 0 auto;
+}
+
+.player-score {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.player-score--active {
+  border-color: var(--accent-violet);
+  box-shadow: 0 0 0 1px var(--accent-violet);
+}
+
+.player-score-symbol {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.player-score--x .player-score-symbol {
+  color: var(--x-color);
+}
+
+.player-score--o .player-score-symbol {
+  color: var(--o-color);
+}
+
+.player-score-name {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-score-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.scoreboard-draws {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 12px 10px;
+  min-width: 64px;
+}
+
+.scoreboard-draws-label {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.scoreboard-draws-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}

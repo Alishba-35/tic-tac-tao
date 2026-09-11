@@ -1,0 +1,108 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: clamp(8px, 2vw, 14px);
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  margin: 0 auto;
+}
+
+.cell {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  background: var(--surface);
+
+  color: var(--text);
+
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 8vw, 4.4rem);
+  font-weight: 600;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.cell:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.015);
+
+  border-color: var(--accent-violet);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell:focus-visible {
+  outline: 3px solid var(--accent-violet);
+  outline-offset: 3px;
+}
+
+.cell--x {
+  color: var(--x-color);
+
+  text-shadow: 0 0 25px color-mix(in srgb, var(--x-color) 30%, transparent);
+}
+
+.cell--o {
+  color: var(--o-color);
+
+  text-shadow: 0 0 25px color-mix(in srgb, var(--o-color) 30%, transparent);
+}
+
+.cell--winning {
+  border-color: var(--accent-gold);
+
+  background: var(--surface-strong);
+
+  box-shadow: 0 0 25px rgba(242, 199, 92, 0.18);
+
+  animation: cell-pop 0.4s ease;
+}
+
+@keyframes cell-pop {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 520px) {
+  .cell {
+    border-radius: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell,
+  .cell--winning {
+    animation: none;
+    transition: none;
+  }
+}
